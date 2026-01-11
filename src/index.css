@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* 基础样式保留 */
+body {
+    @apply select-none bg-slate-50 text-slate-900;
+}
