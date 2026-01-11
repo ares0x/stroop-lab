@@ -12,18 +12,6 @@
 
 ---
 
-## 📸 Demo
-
-![Stroop Lab Demo](docs/images/demo.gif)
-*(Replace this path with your actual GIF)*
-
-### Screenshots
-| Welcome Screen | Results Analysis |
-|:---:|:---:|
-| <img src="docs/images/screenshot-welcome.png" width="400" alt="Welcome Screen"> | <img src="docs/images/screenshot-results.png" width="400" alt="Results Screen"> |
-
----
-
 ## ✨ Features
 
 * **Classic Protocol**: Implements standard Congruent vs. Incongruent trials.
