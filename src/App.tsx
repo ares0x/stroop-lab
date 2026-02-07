@@ -1,41 +1,36 @@
-import { useStroopGame } from "./hooks/useStroopGame";
-import { WelcomeScreen } from "./components/WelcomeScreen";
-import { GameScreen } from "./components/GameScreen";
-import { ResultsScreen } from "./components/ResultsScreen";
+import React, { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { REGISTERED_GAMES } from './config/games';
+import { ErrorBoundary } from './components/common/ErrorBoundary';
+import { LoadingSpinner } from './components/common/LoadingSpinner';
+import HomePage from './pages/HomePage';
+
+/**
+ * 路由级懒加载占位
+ */
+const PageLoadingFallback: React.FC = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50" role="status" aria-label="页面加载中">
+    <LoadingSpinner size="lg" label="页面加载中" />
+  </div>
+);
 
 function App() {
-    const {
-        gameState,
-        currentTrial,
-        progress,
-        startGame,
-        submitAnswer,
-        resetGame,
-        results,
-        trials,
-    } = useStroopGame();
-
-    return (
-        <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-            {gameState === "IDLE" && <WelcomeScreen onStart={startGame} />}
-
-            {gameState === "RUNNING" && currentTrial && (
-                <GameScreen
-                    trial={currentTrial}
-                    progress={progress}
-                    onAnswer={submitAnswer}
-                />
-            )}
-
-            {gameState === "FINISHED" && (
-                <ResultsScreen
-                    results={results}
-                    trials={trials}
-                    onRestart={resetGame}
-                />
-            )}
-        </div>
-    );
+  return (
+    <ErrorBoundary>
+      <Suspense fallback={<PageLoadingFallback />}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          {REGISTERED_GAMES.map(({ path, component: GameComponent }) => (
+            <Route
+              key={path}
+              path={path}
+              element={<GameComponent />}
+            />
+          ))}
+        </Routes>
+      </Suspense>
+    </ErrorBoundary>
+  );
 }
 
 export default App;

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
-/* 基础样式保留 */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    @apply select-none bg-slate-50 text-slate-900;
+  @apply select-none bg-slate-50 text-slate-900;
 }
