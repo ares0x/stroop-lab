@@ -4,5 +4,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap（部署时请将 BASE_URL 替换为实际站点根 URL，如 https://cogni.example.com）
-# Sitemap: https://your-domain.com/sitemap.xml
+
+Sitemap: https://cogni-labs.vercel.app/sitemap.xml

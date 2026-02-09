@@ -94,6 +94,17 @@ Designed with a focus on modern, type-safe web standards:
 
 ---
 
+TEMIO（特米奥）
+temio.app [作为域名备选]
+
+来自 Temper（调节）但完全重构
+
+隐喻：注意力、反应、抑制控制的“校准”
+
+Stroop / 舒尔特非常契合
+
+几乎没有自然语言冲突
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

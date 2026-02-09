@@ -1,7 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useStroopGame } from '../hooks/games/useStroopGame';
-import { GameLayout } from '../components/layout/GameLayout';
 import { useDocumentMeta } from '../hooks/common/useDocumentMeta';
 import { StroopWelcome } from '../components/games/stroop/StroopWelcome';
 import { StroopGame } from '../components/games/stroop/StroopGame';
@@ -19,7 +17,7 @@ import type { ColorType } from '../utils/games/stroop/gameLogic';
  * 
  * 使用 GameLayout 提供统一的页面布局
  */
-const STROOP_TITLE = 'Stroop 测试 | Cogni';
+const STROOP_TITLE = 'Stroop 测试 | Temio';
 const STROOP_DESCRIPTION = 'Stroop 斯特鲁普测试：识别文字颜色而非文字内容，锻炼认知控制与反应速度。';
 
 export const StroopPage: React.FC = () => {
@@ -35,16 +33,16 @@ export const StroopPage: React.FC = () => {
     resetGame,
   } = useStroopGame();
 
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
-  // 处理返回主页
-  const handleHomeClick = () => {
-    if (gameState === GameStateEnum.PLAYING) {
-      const confirmed = window.confirm('游戏正在进行中，确定要离开吗？');
-      if (!confirmed) return;
-    }
-    navigate('/');
-  };
+//   // 处理返回主页
+//   const handleHomeClick = () => {
+//     if (gameState === GameStateEnum.PLAYING) {
+//       const confirmed = window.confirm('游戏正在进行中，确定要离开吗？');
+//       if (!confirmed) return;
+//     }
+//     navigate('/');
+//   };
 
   // 渲染不同的游戏阶段
   const renderGameContent = () => {
@@ -98,15 +96,10 @@ export const StroopPage: React.FC = () => {
         );
     }
   };
-
   return (
-    <GameLayout
-      gameTitle={gameState === GameStateEnum.IDLE ? undefined : 'Stroop 测试'}
-      showHomeLink={gameState !== GameStateEnum.PLAYING}
-      onHomeClick={handleHomeClick}
-    >
+    <div>
       {renderGameContent()}
-    </GameLayout>
+    </div>
   );
 };
 

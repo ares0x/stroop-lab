@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BRAND = 'Cogni';
+const BRAND = 'Temio';
 const TAGLINE = '脑力训练平台';
 const YEAR = new Date().getFullYear();
 

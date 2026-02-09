@@ -46,6 +46,7 @@ logs
 
 node_modules
 bower_components
+dist
 
 *.sublime*
 
@@ -72,4 +73,18 @@ sketch
 .history
 .ionide
 
+# Vite
+.vite
+
+# env
+.env
+.env.*
+
+# cache & temp
+.cache
+.tmp
+.temp
+coverage
+
 # End of https://www.toptal.com/developers/gitignore/api/react,nextjs,visualstudiocode
+

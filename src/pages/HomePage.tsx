@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import { REGISTERED_GAMES } from '../config/games';
 import { DEFAULT_TITLE, DEFAULT_DESCRIPTION } from '../config/site';
 import { GameCard } from '../components/common/GameCard';
-import { GameLayout } from '../components/layout/GameLayout';
 import { useDocumentMeta } from '../hooks/common/useDocumentMeta';
 
 const GAMES_SECTION_ID = 'games';
@@ -24,11 +23,7 @@ export const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <GameLayout
-      gameTitle="Cogni"
-      showHomeLink={false}
-      titleLinkToHome
-    >
+    <div>
       {/* Hero：品牌 + 价值主张 + 主 CTA */}
       <section
         className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 py-16 md:py-24 px-4"
@@ -81,8 +76,9 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-    </GameLayout>
+      </div>
   );
+  
 };
 
 export default HomePage;

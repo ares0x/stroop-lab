@@ -39,7 +39,7 @@ export interface HeaderProps {
  * **Validates: Requirements 2.4**
  */
 export const Header: React.FC<HeaderProps> = ({
-  title = 'Cogni',
+  title = 'Temio',
   showHomeLink = false,
   onHomeClick,
   titleLinkToHome = false,

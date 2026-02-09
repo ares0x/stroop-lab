@@ -1,7 +1,6 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { useSchulteGame } from '../hooks/games/useSchulteGame';
-import { GameLayout } from '../components/layout/GameLayout';
 import { useDocumentMeta } from '../hooks/common/useDocumentMeta';
 import { SchulteWelcome } from '../components/games/schulte/SchulteWelcome';
 import { SchulteGame } from '../components/games/schulte/SchulteGame';
@@ -18,7 +17,7 @@ import { GameState as GameStateEnum } from '../types/common';
  * 
  * 使用 GameLayout 提供统一的页面布局
  */
-const SCHULTE_TITLE = '舒尔特方格 | Cogni';
+const SCHULTE_TITLE = '舒尔特方格 | Temio';
 const SCHULTE_DESCRIPTION = '舒尔特方格：按顺序点击数字，提升注意力与视觉搜索速度。';
 
 export const SchultePage: React.FC = () => {
@@ -37,16 +36,16 @@ export const SchultePage: React.FC = () => {
     resetGame,
   } = useSchulteGame();
 
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
-  // 处理返回主页
-  const handleHomeClick = () => {
-    if (gameState === GameStateEnum.PLAYING) {
-      const confirmed = window.confirm('游戏正在进行中，确定要离开吗？');
-      if (!confirmed) return;
-    }
-    navigate('/');
-  };
+//   // 处理返回主页
+//   const handleHomeClick = () => {
+//     if (gameState === GameStateEnum.PLAYING) {
+//       const confirmed = window.confirm('游戏正在进行中，确定要离开吗？');
+//       if (!confirmed) return;
+//     }
+//     navigate('/');
+//   };
 
   // 渲染不同的游戏阶段
   const renderGameContent = () => {
@@ -104,13 +103,9 @@ export const SchultePage: React.FC = () => {
   };
 
   return (
-    <GameLayout
-      gameTitle={gameState === GameStateEnum.IDLE ? undefined : '舒尔特方格'}
-      showHomeLink={gameState !== GameStateEnum.PLAYING}
-      onHomeClick={handleHomeClick}
-    >
+    <div>
       {renderGameContent()}
-    </GameLayout>
+    </div>
   );
 };
 
