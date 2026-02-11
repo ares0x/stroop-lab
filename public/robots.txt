@@ -1,8 +1,20 @@
-# Cogni - 脑力训练平台
+# Temio - 脑力训练平台
 # https://www.robotstxt.org/robotstxt.html
+
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
 
 User-agent: *
 Allow: /
-
 
 Sitemap: https://cogni-labs.vercel.app/sitemap.xml
